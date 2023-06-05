@@ -1,7 +1,11 @@
+using PruebaAspirantes.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Inyeccion
+builder.Services.AddScoped<IService_API, Service_API>();
 
 var app = builder.Build();
 

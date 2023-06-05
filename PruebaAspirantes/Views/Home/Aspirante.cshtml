@@ -1,0 +1,50 @@
+﻿@model ModelAspirantes
+@{
+    ViewData["Title"] = "Aspirante";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Aspirantes</h1>
+<div class="card">
+    <div class="card-header">
+        @ViewBag.Accion
+    </div>
+    <div class="card-body">
+
+        <form asp-action="GuardarCambios" asp-controller="Home" method="post">
+
+            <input type="hidden" asp-for="Id" />
+
+            @*<div class="mb-2">
+                <label class="form-label">Id : </label>
+                <input type="text" class="form-control form-control-sm" asp-for="Id" />
+            </div>*@
+
+            <div class="mb-2">
+                <label class="form-label">Nombre : </label>
+                <input type="text" class="form-control form-control-sm" asp-for="nombre" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Apellido : </label>
+                <input type="text" class="form-control form-control-sm" asp-for="apellido" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Correo Electronico : </label>
+                <input type="email" class="form-control form-control-sm" asp-for="correoElectronico"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Numero Telefonico : </label>
+                <input type="number" class="form-control form-control-sm" asp-for="numTelefonico"/>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Lugar de Nacimiento : </label>
+                <input type="text" class="form-control form-control-sm" asp-for="lugarNacimiento" />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-sm">Guardar Cambios</button>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-warning btn-sm">Volver a lista</a>
+        </form>
+
+    </div>
+
+</div>
